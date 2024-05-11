@@ -1,6 +1,16 @@
 asect 0x00
 setsp 0xf0
 L4:
+ldi r1,0xf4
+ld r1,r1
+if 
+	tst r1
+is z
+	ldi r2, 15
+	ldi r0, 0xf1
+  	st r0, r2
+  	br L4
+fi
 ldi r1, 0xf2
 ldi r2, 0xf3
 ld r1, r1
